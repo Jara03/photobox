@@ -15,7 +15,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -71,10 +71,9 @@ nav #next {
 .vignette{
   border : solid 1px black;
   display: inline-grid;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 15px;
   text-align: center;
-  padding:20px;
+  padding:40px;
   max-height: 350px;
   max-width: 400px;
 
