@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   background: #a1686d;
   line-height: 1;
-  font-family: Impact;
+  font-family: "Lucida Sans", serif;
 }
 
 ol, ul {
@@ -101,7 +101,9 @@ nav * {
 #lightbox-head {
   display: inline;
 }
-
+#lightbox-info{
+  color: white ;
+}
 .btn-light {
   margin-left: 50%;
   width: 40px;
@@ -139,7 +141,7 @@ nav * {
   background: #bd7180;
    border: 1px solid lightgray;
   text-align: center;
-  font-family: Impact;
+  font-family: "Lucida Sans", serif;
 }
 
 img {

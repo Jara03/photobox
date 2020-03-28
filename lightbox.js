@@ -1,10 +1,13 @@
 import * as photoloader from './photoloader.js';
+import * as gallery from "./gallery.js";
+import {loadDescription} from "./gallery.js";
 
 let server_url;
 let vignette ;
-
+let container ;
 
 export function initialisation(u){
+    container = $('#lightbox-info');
     server_url = u ;
     let fermer = $('#lightbox_close');
     fermer.click(close);
@@ -18,6 +21,23 @@ export function initialisation(u){
 
 }
 
+export function newDesc(photo){
+    let desc = $("<div>").addClass('description');
+
+
+    $('<p>').text('nom: ' + photo.titre).appendTo(desc);
+        $('<p>').text('description: ' + photo.descr).appendTo(desc);
+        $('<p>').text('format: ' + photo.format).appendTo(desc);
+        $('<p>').text('taille: ' + photo.size).appendTo(desc);
+        $('<p>').text('largeur: ' + photo.width).appendTo(desc);
+        $('<p>').text('hauteur: ' + photo.height).appendTo(desc);
+
+
+
+    return $('#lightbox-info').append(desc);
+
+}
+
 export function afficheLight(v){
     if (typeof v.target == 'undefined') {
         vignette = v;
@@ -26,6 +46,12 @@ export function afficheLight(v){
     }
 
     $('#lightbox_full_img').attr('src',vignette.firstElementChild.attributes.src.nodeValue);
+    $('#lightbox_title').text(vignette.lastElementChild.textContent);
+    //ajout de la description d'un photo
+    let info =  $('#lightbox-info');
+    info.empty();
+    info.text(loadDescription(vignette.firstElementChild.attributes.name.nodeValue));
+
     let  container = $('#lightbox_container');
     container.css('display','block');
 

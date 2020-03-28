@@ -1,4 +1,5 @@
 import * as gallery from './gallery.js';
+import * as lightbox from './lightbox.js';
 
 
 let server_url ;
@@ -36,6 +37,7 @@ let offset = 8 ;
             gallery.domCharging(results.data.photos);
         });
     }
+
 
 
     export function prochaine() {
