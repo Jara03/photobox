@@ -7,12 +7,15 @@ export function initialisation(u){
     gal = $('#photobox-gallery');
     server_url = u ;
 }
- export function domCharging(listePhoto){
-    listePhoto.forEach(p => {
-        newVignette(p);
-        });
-}
+ export function domCharging(listePhoto) {
+     listePhoto.forEach(p => {
+         newVignette(p);
+     });
 
+ }
+export function reset(){
+    $(".vignette").remove();
+}
 
 function newVignette(photo){
     let vign = $("<div>").addClass('vignette');
@@ -26,7 +29,7 @@ function newVignette(photo){
     vign.click(lightbox.afficheLight);
 
     return gal.append(vign);
-
-
 }
+
+
 
