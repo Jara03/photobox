@@ -38,10 +38,11 @@ export function newDesc(photo){
 
 }
 
-export function afficheLight(v){
+export function afficheLight(v,dir){
     if (typeof v.target == 'undefined') {
         vignette = v;
     } else {
+
         vignette = v.currentTarget;
     }
 
